@@ -186,7 +186,7 @@ const Sorting = () => {
                     <br />
                     <p>{info}</p>
                     <br />
-                    <Button onClick={() => setRandom(getRandomNumbers())}>Get Random Numbers</Button>
+                    <Button onClick={() => setRandom(getRandomNumbers())}>Generate Random Numbers</Button>
                     <br />
                     <Button variant="secondary" onClick={() => sort()}>Sort</Button>
                 </Col>
