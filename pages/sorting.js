@@ -160,7 +160,7 @@ const Sorting = () => {
                 <Col md="12" className="d-flex flex-direction-row">
                     {
                         random.map((r, i) => (
-                            <div style={{height: r, width: "9px", backgroundColor: coloredIndex.includes(i) ? "red" : "black", margin: "9px"}}></div>
+                            <div style={{height: r * 1.5, width: "9px", backgroundColor: coloredIndex.includes(i) ? "red" : "black", margin: "9px"}}></div>
                         ))
                     }
                 </Col>
