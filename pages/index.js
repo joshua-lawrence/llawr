@@ -43,7 +43,7 @@ export default function Home() {
               </a>
           </Col>
           <Col md="4">
-              <a href="https://www.sadiephoto.com/" style={{width: "100%"}}>
+              <a href="https://www.decheque.com/" style={{width: "100%"}}>
                 <img src="Capture2.PNG" style={{margin: "auto",width: "100%", border: "1px solid grey"}}>
                 </img>
                 <h5 className="text-center pt-3">Decheque</h5>
