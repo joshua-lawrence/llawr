@@ -34,7 +34,7 @@ export default function Home() {
         </Row>
       </Container>
       <Container>
-        <Row style={{margin: "100px 0px 100px 0px"}}>
+        <Row style={{margin: "100px 0px 50px 0px"}}>
           <Col md="4">
               <a href="https://www.sadiephoto.com/" style={{width: "100% !important"}}>
                 <img src="Capture.PNG" style={{ margin: "auto", width: "100%", border: "1px solid grey"}}>
@@ -56,6 +56,15 @@ export default function Home() {
                 <h5 className="text-center pt-3">World Class Integration</h5>
               </a>
           </Col>
+        </Row>
+        <Row style={{margin: "0px 0px 100px 0px"}}>
+          <Col md="4">
+                <a href="/algorithms" style={{width: "100%"}}>
+                  <img src="Capture4.PNG" style={{ margin: "auto", width: "100%", border: "1px solid grey"}}>
+                  </img>
+                  <h5 className="text-center pt-3">Algos and DS Visualized</h5>
+                </a>
+            </Col>
         </Row>
       </Container>
     </>
