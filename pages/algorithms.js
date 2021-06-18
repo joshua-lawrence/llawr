@@ -1,29 +1,97 @@
 import React, { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { makeStyles } from '@material-ui/core/styles';
 import Searching from './searching';
 import Sorting from './sorting';
+import Typography from '@material-ui/core/Typography';
+import Drawer from '@material-ui/core/Drawer';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import SearchIcon from '@material-ui/icons/Search';
+import SortIcon from '@material-ui/icons/Sort';
 
+const drawerWidth = 240;
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+    },
+    appBar: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth + "px",
+    },
+    drawer: {
+      width: drawerWidth + "px",
+      flexShrink: 0,
+    },
+    drawerPaper: {
+      width: drawerWidth + "px",
+    },
+    // necessary for content to be below app bar
+    toolbar: theme.mixins.toolbar,
+    content: {
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.default,
+      padding: theme.spacing(3),
+    },
+    listLabel: {
+        marginLeft: "5px"
+    }
+  }));
 
 const Algorithms = () => {
-    const [section, setSection] = useState("sorting");
+    const [section, setSection] = useState("Sorting");
+    const classes = useStyles();
     return (
-        <Container>
-            <h1 className="text-center mt-5">Data Structures and Algorithms Visualized</h1>
-            <h5 className="text-center mt-3 mb-3"><a href="/">Joshua Lawrence</a></h5>
-            <div className="d-flex flex-direction-row justify-content-around mb-5">
-                <button onClick={() => {setSection("sorting")}}>Sorting</button>
-                <button onClick={() => {setSection("searching")}}>Searching</button>
-                <button onClick={() => {setSection("union-find")}}>Union Find</button>
-                <button onClick={() => {setSection("trees")}}>Trees</button>
-                <button onClick={() => {setSection("graphs")}}>Graphs</button>
+        <div className={classes.root}>
+            <CssBaseline />
+            <Drawer
+                variant="permanent"
+                anchor="left"
+                className={classes.drawer}
+                variant="permanent"
+                classes={{
+                paper: classes.drawerPaper,
+                }}
+                anchor="left"
+            >
+                <Divider />
+                <List>
+                    <Typography variant="h6" className={classes.listLabel}>
+                        Sorting and Searching
+                    </Typography>
+                {['Sorting', 'Searching'].map((text, index) => (
+                    <ListItem button key={text} onClick={() => setSection(text)}>
+                        <ListItemIcon>{index % 2 === 0 ? <SortIcon /> : <SearchIcon />}</ListItemIcon>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+                </List>
+                <Divider />
+                <List>
+                    <Typography variant="h6" className={classes.listLabel}>
+                        Data Structures
+                    </Typography>
+                </List>
+                <Divider />
+                <List>
+                    <Typography variant="h6" className={classes.listLabel}>
+                        Path Finding
+                    </Typography>
+                </List>
+            </Drawer>
+            <div className="appBar">
+                {section == 'Sorting' && (
+                    <Sorting />
+                )}
+                {section == 'Searching' && (
+                    <Searching />
+                )}
             </div>
-            {section == 'sorting' && (
-                <Sorting />
-            )}
-            {section == 'searching' && (
-                <Searching />
-            )}
-        </Container>
+        </div>
     )
 }
 

@@ -54,11 +54,11 @@ const Searching = () => {
                     <br />
                     <p>{}</p>
                     <br />
-                    <Button onClick={() => setRandom(getRandomNumbers())}>Generate Random Numbers</Button>
+                    <button onClick={() => setRandom(getRandomNumbers())}>Generate Random Numbers</button>
                     <br />
                     <input></input>
                     <br />
-                    <Button variant="secondary" onClick={() => {}}>Search</Button>
+                    <button onClick={() => {}}>Search</button>
                 </Col>
             </Row>
         </>

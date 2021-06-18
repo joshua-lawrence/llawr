@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import { Container,
-    Row,
-    Col,
-    Navbar,
-    Button, } from "react-bootstrap"
+import Button from '@material-ui/core/Button';
 import { AiFillSetting } from "react-icons/ai";
+import Container from '@material-ui/core/Container';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import Slider from '@material-ui/core/Slider';
+import TextField from '@material-ui/core/TextField';
 
-const getRandomNumbers = () => {
+const getRandomNumbers = (count) => {
     var random = [];
-    for(var i = 0; i < 40; i++) {
+    for(var i = 0; i < count; i++) {
         random = random.concat(Math.floor(100 * Math.random()));
     }
     return random;
 }
 
 const Sorting = () => {
-    let [random, setRandom] = useState(getRandomNumbers());
+    let [count, setCount] = useState(40);
+    let [random, setRandom] = useState(getRandomNumbers(count));
     let [sortType, setSortType] = useState("selection");
     let [info, setInfo] = useState("Selection sort works by finding the minimum value in the data structure, and swapping it with the first position. Then, the first positon is iterated. Time complexity O(n^2).");
     let [coloredIndex, setColoredIndex] = useState([]);
@@ -24,6 +29,7 @@ const Sorting = () => {
     let [delay, setDelay] = useState(75);
 
     useEffect(() => setSorting(false), [random]);
+    useEffect(() => setRandom(getRandomNumbers(count)), [count]);
     useEffect(() => {
         var sortNote;
         switch (sortType) {
@@ -122,6 +128,23 @@ const Sorting = () => {
         setColoredIndex([]);
     }
 
+    // const shellSort = async () => {
+    //     setSorting(true);
+    //     let sorted = random;
+    //     setSorting(false);
+    //     setColoredIndex([]);
+    // }
+
+    const merge = async () => {
+
+    }
+
+    const mergeSort = async () => {
+        setSorting(true);
+        let sorted = random;
+        let midpoint = 0;
+    }
+
     const sort = () => {
         if(sorting !== true) {
             switch (sortType) {
@@ -140,32 +163,49 @@ const Sorting = () => {
         }
     }
     return (
-        <>
-            <h4 className="text-center">Sorting<button onClick={() => {setSettings(!settings)}} style={{background: "none", border: "none", width: "50px"}}><AiFillSetting></AiFillSetting></button></h4>
+        <div>
+    <AppBar position="static" style={{width: "calc(100vw - 240px) !important"}}>
+        <Toolbar>
+          <Typography variant="h6" style={{flexGrow: "1"}}>
+            Sorting
+          </Typography>
+          <Button variant="contained" style={{margin: "10px"}} onClick={() => sort()}>Sort</Button>
+          <Button variant="contained" style={{margin: "10px"}} onClick={() => setRandom(getRandomNumbers(count))}>Generate Random Numbers</Button>
+          <Select
+          value={sortType}
+          onChange={(e) => setSortType(e.target.value)}
+          style={{margin: "10px"}}
+        >
+            <MenuItem value="selection">Selection Sort</MenuItem>
+            <MenuItem value="bubble">Bubble Sort</MenuItem>
+            <MenuItem value="insertion">Insertion Sort</MenuItem>
+            <MenuItem value="merge">Merge Sort</MenuItem>
+            <MenuItem value="quick">Quick Sort</MenuItem>
+            <MenuItem value="heap">Heap Sort</MenuItem>
+            <MenuItem value="radix">Radix Sort</MenuItem>
+        </Select>
+                <Typography style={{margin: "10px"}}>Animation Delay (ms)</Typography>
+        <TextField value={delay} onChange={(e) => setDelay(e.target.value)} style={{width: "30px", margin: "10px"}}/>
+        <Typography style={{margin: "10px"}}># of values</Typography>
+        <Slider
+        defaultValue={count}
+        value={count}
+        step={20}
+        marks
+        min={10}
+        max={400}
+        onChange={(e, val) => setCount(val)}
+        style={{width: "200px", margin: "10px", color: "white"}}
+      />
+        </Toolbar>
 
-            <Row className="justify-content-md-center">
-                <Col md="12">
-                    {
-                        random.map((r, i) => (
-                            <span style={{
-                                padding: '5px', 
-                                color: coloredIndex.includes(i) ? "red" : "black",
-                                fontWeight: coloredIndex.includes(i) ? "600" : "400",
-                        }}>{r}</span>
-                        ))
-                    }
-                </Col>
-            </Row>
-            <Row className="justify-content-md-center">
-                <Col md="12" className="d-flex flex-direction-row">
-                    {
-                        random.map((r, i) => (
-                            <div style={{height: r * 1.5, width: "9px", backgroundColor: coloredIndex.includes(i) ? "red" : "black", margin: "9px"}}></div>
-                        ))
-                    }
-                </Col>
-            </Row>
-            <Row className="justify-content-md-center">
+      </AppBar>
+            {
+                random.map((r, i) => (
+                    <div style={{width: r * .88 + "vw", height: 90/count + "vh", backgroundColor: coloredIndex.includes(i) ? "#f48fb1" : "#90caf9"}}></div>
+                ))
+            }
+            {/* <Row className="justify-content-md-center">
                 <Col md="6" className="d-flex flex-column w-25">
                     {settings && (
                         <>
@@ -186,12 +226,12 @@ const Sorting = () => {
                     <br />
                     <p>{info}</p>
                     <br />
-                    <Button onClick={() => setRandom(getRandomNumbers())}>Generate Random Numbers</Button>
+                    <button onClick={() => setRandom(getRandomNumbers())}>Generate Random Numbers</button>
                     <br />
-                    <Button variant="secondary" onClick={() => sort()}>Sort</Button>
+                    <button variant="secondary" onClick={() => sort()}>Sort</button>
                 </Col>
-            </Row>
-        </>
+            </Row> */}
+        </div>
     )
 }
 
