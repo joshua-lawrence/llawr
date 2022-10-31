@@ -1,14 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@material-ui/core': ^4.11.4
-  '@material-ui/icons': ^4.11.2
-  bootstrap: ^4.5.3
+  '@material-ui/core': ^4.12.4
+  '@material-ui/icons': ^4.11.3
+  bootstrap: ^4.6.2
   next: 10.0.4
   react: 17.0.1
-  react-bootstrap: ^1.4.0
+  react-bootstrap: ^1.6.6
   react-dom: 17.0.1
-  react-icons: ^4.1.0
+  react-icons: ^4.6.0
 
 dependencies:
   '@material-ui/core': 4.12.4_w7o5yyljkiidx2s2nzb26ottzu
@@ -1257,7 +1257,7 @@ packages:
       cssesc: 3.0.0
       icss-utils: 4.1.1
       loader-utils: 2.0.0
-      postcss: 7.0.39
+      postcss: 7.0.32
       postcss-modules-extract-imports: 2.0.0
       postcss-modules-local-by-default: 3.0.3
       postcss-modules-scope: 2.2.0
@@ -1298,14 +1298,14 @@ packages:
     resolution: {integrity: sha512-B2KahOIFTV6dw5Ioy9jHshTh/vAYNnUB2enyWRgnAEg3oJBjI/035ExpePaMqS2SwpbH7gCgvQqwpMBH6hTJSw==}
     dependencies:
       caniuse-lite: 1.0.30001427
-      postcss: 7.0.39
+      postcss: 7.0.32
     dev: false
 
   /cssnano-simple/1.2.1:
     resolution: {integrity: sha512-9vOyjw8Dj/T12kIOnXPZ5VnEIo6F3YMaIn0wqJXmn277R58cWpI3AvtdlCBtohX7VAUNYcyk2d0dKcXXkb5I6Q==}
     dependencies:
       cssnano-preset-simple: 1.2.1
-      postcss: 7.0.39
+      postcss: 7.0.32
     dev: false
 
   /csstype/2.6.21:
@@ -2008,7 +2008,7 @@ packages:
     resolution: {integrity: sha512-4aFq7wvWyMHKgxsH8QQtGpvbASCf+eM3wPRLI6R+MgAnTCZ6STYsRvttLvRWK0Nfif5piF394St3HeJDaljGPA==}
     engines: {node: '>= 6'}
     dependencies:
-      postcss: 7.0.39
+      postcss: 7.0.32
     dev: false
 
   /ieee754/1.2.1:
@@ -2945,10 +2945,6 @@ packages:
       sha.js: 2.4.11
     dev: false
 
-  /picocolors/0.2.1:
-    resolution: {integrity: sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==}
-    dev: false
-
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -2999,7 +2995,7 @@ packages:
     resolution: {integrity: sha512-LaYLDNS4SG8Q5WAWqIJgdHPJrDDr/Lv775rMBFUbgjTz6j34lUznACHcdRWroPvXANP2Vj7yNK57vp9eFqzLWQ==}
     engines: {node: '>= 6'}
     dependencies:
-      postcss: 7.0.39
+      postcss: 7.0.32
     dev: false
 
   /postcss-modules-local-by-default/3.0.3:
@@ -3007,7 +3003,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       icss-utils: 4.1.1
-      postcss: 7.0.39
+      postcss: 7.0.32
       postcss-selector-parser: 6.0.10
       postcss-value-parser: 4.2.0
     dev: false
@@ -3016,7 +3012,7 @@ packages:
     resolution: {integrity: sha512-YyEgsTMRpNd+HmyC7H/mh3y+MeFWevy7V1evVhJWewmMbjDHIbZbOXICC2y+m1xI1UVfIT1HMW/O04Hxyu9oXQ==}
     engines: {node: '>= 6'}
     dependencies:
-      postcss: 7.0.39
+      postcss: 7.0.32
       postcss-selector-parser: 6.0.10
     dev: false
 
@@ -3024,14 +3020,14 @@ packages:
     resolution: {integrity: sha512-1//E5jCBrZ9DmRX+zCtmQtRSV6PV42Ix7Bzj9GbwJceduuf7IqP8MgeTXuRDHOWj2m0VzZD5+roFWDuU8RQjcg==}
     dependencies:
       icss-utils: 4.1.1
-      postcss: 7.0.39
+      postcss: 7.0.32
     dev: false
 
   /postcss-safe-parser/4.0.2:
     resolution: {integrity: sha512-Uw6ekxSWNLCPesSv/cmqf2bY/77z11O7jZGPax3ycZMFU/oi2DMH9i89AdHc1tRwFg/arFoEwX0IS3LCUxJh1g==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      postcss: 7.0.39
+      postcss: 7.0.32
     dev: false
 
   /postcss-selector-parser/6.0.10:
@@ -3062,14 +3058,6 @@ packages:
       chalk: 2.4.2
       source-map: 0.6.1
       supports-color: 6.1.0
-    dev: false
-
-  /postcss/7.0.39:
-    resolution: {integrity: sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      picocolors: 0.2.1
-      source-map: 0.6.1
     dev: false
 
   /postcss/8.1.7:
