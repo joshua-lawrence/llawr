@@ -6,6 +6,7 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 export default function Home() {
   return (
     <>
+      {/* test */}
       <Head>
         <title>Joshua Lawrence</title>
         <link rel="icon" href="/favicon.ico" />
@@ -80,7 +81,7 @@ export default function Home() {
               className="float-card"
             >
               <img
-                src="velvet.PNG"
+                src="velvet.png"
                 style={{
                   margin: "auto",
                   width: "100%",
