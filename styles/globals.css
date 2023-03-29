@@ -22,6 +22,39 @@ a {
   text-decoration: none !important;
 }
 
+.color-shadow {
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: 8px;
+  background-color: black;
+  margin: 100px;
+}
+.color-shadow::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  transform: translate3d(30px, 30px, -1px);
+  background: conic-gradient(
+    from 90deg at 40% -25%,
+    #ffd700,
+    #f79d03,
+    #ee6907,
+    #e6390a,
+    #de0d0d,
+    #d61039,
+    #cf1261,
+    #c71585,
+    #cf1261,
+    #d61039,
+    #de0d0d,
+    #ee6907,
+    #f79d03,
+    #ffd700,
+    #ffd700,
+    #ffd700
+  );
+  filter: blur(100px);
+}
 .gradient-h1 {
   background-image: linear-gradient(
     rgb(0, 183, 250) 25%,

@@ -1,9 +1,18 @@
-import '../styles/globals.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { createTheme, NextUIProvider } from "@nextui-org/react";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const darkTheme = createTheme({
+    type: "dark",
+    theme: {
+      colors: {},
+    },
+  });
+  return (
+    <NextUIProvider theme={darkTheme}>
+      <Component {...pageProps} />
+    </NextUIProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
