@@ -11,8 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Navbar style={{}}></Navbar> */}
-      <div className="color-shadow">
-        <Container fluid>
+      <div className="color-shadow" style={{}}>
+        <Container lg responsive={false}>
           <Grid.Container>
             <Grid
               md="8"
@@ -22,7 +22,7 @@ export default function Home() {
                 justifyContent: "center",
               }}
             >
-              <div>
+              <div style={{ padding: 36 }}>
                 <Text
                   h1
                   css={{
