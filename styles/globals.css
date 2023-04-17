@@ -25,11 +25,10 @@ a {
 .color-shadow {
   position: relative;
   transform-style: preserve-3d;
-  border-radius: 40px;
-  background-color: black;
   margin: 100px;
+  z-index: 1;
 }
-.color-shadow::before {
+.color-shadow::after {
   content: "";
   position: absolute;
   inset: -5px;
@@ -54,6 +53,7 @@ a {
     #ffd700
   );
   filter: blur(40px);
+  z-index: -1;
 }
 .gradient-h1 {
   background-image: linear-gradient(
@@ -94,8 +94,12 @@ a {
 }
 
 @media (max-width: 800px) {
-  .col-md-4 {
-    margin-bottom: 100px;
+  .color-shadow {
+    margin: 36px;
+  }
+
+  .body-card {
+    padding: 12px !important;
   }
   .me {
     display: block;
