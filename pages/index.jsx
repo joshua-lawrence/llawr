@@ -50,7 +50,7 @@ export default function Home() {
                   >
                     Engineering · DevOps · AI · Data Driven Decision Making
                   </Text>
-                  <Grid.Container>
+                  <Grid.Container css={{ zIndex: 10000 }}>
                     <Grid>
                       <a href="https://github.com/joshua-lawrence">
                         <AiFillGithub fontSize={36} />
